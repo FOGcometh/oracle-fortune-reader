@@ -1,18 +1,20 @@
 /* Oracle Fortune Reader — the shrine's own palette.
-   Only this game's layers are styled; SDK classes and menus keep their own look. */
+   Deep violet, not the garden's neon green: a blackcurrant dark that reads as
+   tarot rather than radioactive. Only this game's layers are styled; SDK
+   classes and menus keep their own look. */
 
-.ofr{position:relative;width:100%;height:100%;overflow:hidden;background:#040a08;color:#dff7ea;font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
-.ofr-stage{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden;background:#040a08}
+.ofr{position:relative;width:100%;height:100%;overflow:hidden;background:#06040f;color:#e8e0ff;font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
+.ofr-stage{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden;background:#06040f}
 .ofr-world{position:absolute;inset:0}
-/* The garden stays, but this corner is pushed dark. */
-.ofr-world canvas{filter:brightness(.44) contrast(1.06) grayscale(.88)}
+/* The garden stays, but this corner is pushed dark and drained toward violet. */
+.ofr-world canvas{filter:brightness(.40) contrast(1.08) grayscale(.78) sepia(.42) hue-rotate(212deg) saturate(2.6)}
 
 .ofr-glow,.ofr-vignette{position:absolute;inset:0;pointer-events:none;z-index:1}
-.ofr-glow{background:radial-gradient(circle at 44% 47%,rgba(74,232,164,.34),rgba(26,132,92,.16) 26%,rgba(0,0,0,0) 58%);mix-blend-mode:screen}
-.ofr-vignette{background:radial-gradient(ellipse at 44% 47%,rgba(0,0,0,0) 40%,rgba(0,0,0,.55) 100%)}
+.ofr-glow{background:radial-gradient(circle at 44% 47%,rgba(146,92,255,.34),rgba(74,38,140,.18) 26%,rgba(0,0,0,0) 58%);mix-blend-mode:screen}
+.ofr-vignette{background:radial-gradient(ellipse at 44% 47%,rgba(0,0,0,0) 40%,rgba(0,0,0,.6) 100%)}
 
 .ofr-motes{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
-.ofr-motes i{position:absolute;width:4px;height:4px;border-radius:50%;background:#9ff5c5;box-shadow:0 0 10px rgba(111,227,165,.9);opacity:0;animation:ofr-drift linear infinite}
+.ofr-motes i{position:absolute;width:4px;height:4px;border-radius:50%;background:#c9b0ff;box-shadow:0 0 10px rgba(174,140,255,.9);opacity:0;animation:ofr-drift linear infinite}
 .ofr-motes i:nth-child(1){left:33%;bottom:34%;animation-duration:13s;animation-delay:-2s}
 .ofr-motes i:nth-child(2){left:47%;bottom:26%;animation-duration:17s;animation-delay:-7s}
 .ofr-motes i:nth-child(3){left:56%;bottom:38%;animation-duration:11s;animation-delay:-4s}
@@ -20,71 +22,82 @@
 
 .ofr-spirit{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:2}
 .ofr-spirit-figure{position:absolute;transform:translate(-50%,-100%);animation:ofr-float 6s ease-in-out infinite}
-.ofr-oracle{flex:none;color:#ecfff6;filter:drop-shadow(0 0 12px rgba(96,232,172,.55))}
-.ofr-oracle-halo{fill:rgba(111,227,165,.3)}
-.ofr-oracle-ink{fill:#ecfff6}
+.ofr-oracle{flex:none;color:#f4eeff;filter:drop-shadow(0 0 12px rgba(174,140,255,.55))}
+.ofr-oracle-halo{fill:rgba(174,140,255,.3)}
+.ofr-oracle-ink{fill:#f4eeff}
 
 .ofr-hud{position:absolute;z-index:3;top:0;left:0;right:0;display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 12px;pointer-events:none}
 .ofr-status{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 auto 0 0;font-size:12px}
-.ofr-chip{padding:3px 8px;border:1px solid rgba(111,227,165,.45);border-radius:999px;background:rgba(6,26,19,.85);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase}
+.ofr-chip{padding:3px 8px;border:1px solid rgba(174,140,255,.45);border-radius:999px;background:rgba(22,12,42,.85);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase}
 .ofr-chip-warn{border-color:rgba(255,214,120,.6);color:#ffe6ae}
 .ofr-hud-actions{display:flex;flex-wrap:wrap;gap:8px;pointer-events:auto}
 /* Clear of the runtime's own bottom-left toolbar (Local preview / Friend / wallet). */
-.ofr-hint{position:absolute;z-index:3;bottom:58px;left:0;right:0;margin:0;text-align:center;font-size:11px;color:rgba(223,247,234,.75);pointer-events:none}
+.ofr-hint{position:absolute;z-index:3;bottom:58px;left:0;right:0;margin:0;text-align:center;font-size:11px;color:rgba(230,220,255,.75);pointer-events:none}
 .ofr-hint-narrow{display:none}
-.ofr-stage>.ofr-feedback{position:absolute;z-index:3;bottom:86px;left:12px;right:12px;margin:0;text-align:center;font-size:12px;color:#a9e8c7}
+.ofr-stage>.ofr-feedback{position:absolute;z-index:3;bottom:86px;left:12px;right:12px;margin:0;text-align:center;font-size:12px;color:#bda8ee}
 
-.ofr button{font:inherit;cursor:pointer;border:1px solid rgba(111,227,165,.5);border-radius:2px;background:rgba(10,30,23,.85);color:#dff7ea}
+.ofr button{font:inherit;cursor:pointer;border:1px solid rgba(174,140,255,.5);border-radius:2px;background:rgba(26,14,48,.85);color:#e8e0ff}
 .ofr .ofr-stage button,.ofr .ofr-reading button{padding:10px 14px;min-height:44px}
 .ofr .ofr-stage button:disabled,.ofr .ofr-reading button:disabled{cursor:default;opacity:.45}
-.ofr .ofr-stage button.ofr-primary,.ofr .ofr-reading button.ofr-primary{border-color:#6fe3a5;background:linear-gradient(180deg,#9ff5c5,#4fd495);color:#04120c;font-weight:700;letter-spacing:.02em}
-.ofr .ofr-stage button[aria-pressed="true"],.ofr .ofr-reading button[aria-pressed="true"]{border-color:#9ff5c5;color:#eafff3}
-.ofr .ofr-stage button:focus-visible,.ofr .ofr-reading button:focus-visible{outline:3px solid #6fe3a5;outline-offset:2px}
+.ofr .ofr-stage button.ofr-primary,.ofr .ofr-reading button.ofr-primary{border-color:#a97fff;background:linear-gradient(180deg,#c9b0ff,#8a5cf0);color:#120627;font-weight:700;letter-spacing:.02em}
+.ofr .ofr-stage button[aria-pressed="true"],.ofr .ofr-reading button[aria-pressed="true"]{border-color:#c9b0ff;color:#f2eaff}
+.ofr .ofr-stage button:focus-visible,.ofr .ofr-reading button:focus-visible{outline:3px solid #a97fff;outline-offset:2px}
 
-.ofr-loading{display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;width:100%;height:100%;padding:24px;margin:0;text-align:center;background:#040a08;color:#dff7ea;font:14px/1.5 ui-monospace,monospace}
-.ofr-loading-mark{font-size:34px;color:#6fe3a5;animation:ofr-pulse 2.4s ease-in-out infinite}
-.ofr-loading button{font:inherit;cursor:pointer;padding:10px 16px;min-height:44px;border:1px solid rgba(111,227,165,.5);background:rgba(10,30,23,.85);color:#dff7ea}
+.ofr-loading{display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;width:100%;height:100%;padding:24px;margin:0;text-align:center;background:#06040f;color:#e8e0ff;font:14px/1.5 ui-monospace,monospace}
+.ofr-loading-mark{font-size:34px;color:#a97fff;animation:ofr-pulse 2.4s ease-in-out infinite}
+.ofr-loading button{font:inherit;cursor:pointer;padding:10px 16px;min-height:44px;border:1px solid rgba(174,140,255,.5);background:rgba(26,14,48,.85);color:#e8e0ff}
 
-.ofr-reading{position:absolute;inset:0;z-index:5;display:block;overflow:auto;padding:14px;background:radial-gradient(circle at 50% 34%,rgba(11,36,26,.98),rgba(2,6,5,.995) 62%),#040a08}
+.ofr-reading{position:absolute;inset:0;z-index:5;display:block;overflow:auto;padding:14px;background:radial-gradient(circle at 50% 34%,rgba(32,20,62,.98),rgba(5,3,14,.995) 62%),#06040f}
 .ofr-reading-inner{display:flex;flex-direction:column;gap:12px;max-width:760px;margin:0 auto}
 .ofr-reading[data-screen="revealed"] .ofr-reading-inner{justify-content:center;min-height:100%}
 .ofr-reading-head{position:relative;display:flex;flex-direction:column;gap:2px}
-.ofr-kicker{margin:0;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#6fe3a5}
-.ofr-reading h2{margin:0;font-size:clamp(18px,4.4vw,30px);font-weight:600;color:#eafff3}
+.ofr-kicker{margin:0;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#a97fff}
+.ofr-reading h2{margin:0;font-size:clamp(18px,4.4vw,30px);font-weight:600;color:#f2eaff}
 .ofr-close{position:absolute;top:-2px;right:0;min-width:44px!important;padding:6px 10px!important;font-size:20px;line-height:1}
 
-.ofr-oracle-panel{display:flex;gap:16px;align-items:center;padding:14px;border:1px solid rgba(111,227,165,.28);border-radius:4px;background:linear-gradient(160deg,rgba(12,38,28,.88),rgba(4,12,9,.94))}
+.ofr-oracle-panel{display:flex;gap:16px;align-items:center;padding:14px;border:1px solid rgba(174,140,255,.3);border-radius:4px;background:linear-gradient(160deg,rgba(40,24,76,.88),rgba(10,5,24,.94))}
 .ofr-oracle-copy{display:flex;flex-direction:column;gap:4px;min-width:0}
-.ofr-epithet{margin:0;font-size:15px;letter-spacing:.08em;color:#8ff0bd}
-.ofr-opening{margin:0;font-style:italic;color:#cdebd9}
-.ofr-note{margin:0;font-size:11.5px;line-height:1.5;color:rgba(215,240,228,.68)}
-.ofr-art-missing{margin:0;font-size:12.5px;color:#a9e8c7;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
-.ofr-offer-copy{margin:0;font-size:13px;color:#bfe9d4}
+.ofr-epithet{margin:0;font-size:15px;letter-spacing:.08em;color:#c6a9ff}
+.ofr-opening{margin:0;font-style:italic;color:#d9cdf5}
+.ofr-note{margin:0;font-size:11.5px;line-height:1.5;color:rgba(226,216,250,.68)}
+.ofr-art-missing{margin:0;font-size:12.5px;color:#bda8ee;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.ofr-offer-copy{margin:0;font-size:13px;color:#cdbdf0}
 .ofr-offer,.ofr-reveal,.ofr-casting{display:flex;flex-direction:column;gap:12px}
 .ofr-actions{display:flex;flex-wrap:wrap;gap:10px}
-.ofr-casting{align-items:center;text-align:center;padding:26px 14px;border:1px solid rgba(111,227,165,.25);border-radius:4px;background:rgba(6,20,14,.7)}
-.ofr-casting-mark{font-size:30px;color:#6fe3a5;animation:ofr-pulse 1.6s ease-in-out infinite}
+.ofr-casting{align-items:center;text-align:center;padding:26px 14px;border:1px solid rgba(174,140,255,.26);border-radius:4px;background:rgba(20,10,40,.7)}
+.ofr-casting-mark{font-size:30px;color:#a97fff;animation:ofr-pulse 1.6s ease-in-out infinite}
 .ofr-casting p{margin:0}
 
 .ofr-odds{width:100%;border-collapse:collapse;font-size:12.5px}
-.ofr-odds caption{padding-bottom:6px;text-align:left;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#6fe3a5}
-.ofr-odds th,.ofr-odds td{padding:6px 8px;border-bottom:1px solid rgba(111,227,165,.18);text-align:right}
-.ofr-odds th[scope="row"],.ofr-odds th[scope="col"]:first-child{text-align:left;font-weight:500;color:#dff7ea}
-.ofr-odds td{color:#a9e8c7}
+.ofr-odds caption{padding-bottom:6px;text-align:left;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#a97fff}
+.ofr-odds th,.ofr-odds td{padding:6px 8px;border-bottom:1px solid rgba(174,140,255,.18);text-align:right}
+.ofr-odds th[scope="row"],.ofr-odds th[scope="col"]:first-child{text-align:left;font-weight:500;color:#e8e0ff}
+.ofr-odds td{color:#bda8ee}
 
-.ofr-card{position:relative;padding:22px 20px 24px;border:1px solid rgba(111,227,165,.5);border-radius:6px;background:radial-gradient(120% 90% at 50% 0%,rgba(20,58,42,.95),rgba(3,10,7,.98));box-shadow:inset 0 0 0 1px rgba(6,20,15,.9),0 12px 40px rgba(0,0,0,.55),0 0 34px rgba(58,196,140,.16)}
-.ofr-card::before{content:"";position:absolute;inset:6px;border:1px dashed rgba(111,227,165,.26);border-radius:3px;pointer-events:none}
-.ofr-card-numeral{position:absolute;top:8px;right:14px;margin:0;font-size:34px;letter-spacing:.1em;color:rgba(111,227,165,.38)}
-.ofr-card-tier{margin:0;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#6fe3a5}
-.ofr-card h3{margin:8px 0 6px;font-size:clamp(19px,4.6vw,28px);font-weight:600;color:#f2fff8}
-.ofr-card-opening{margin:0;font-size:13px;font-style:italic;color:#9ff0c4}
-.ofr-card-omen{margin:12px 0 0;font-size:15px;line-height:1.6;color:#e7fdf1}
-.ofr-card-advice{margin:10px 0 0;font-size:13.5px;color:#c7ebd7}
-.ofr-card-source{margin:14px 0 0;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(160,220,190,.62)}
+.ofr-card{position:relative;padding:22px 20px 24px;border:1px solid rgba(174,140,255,.5);border-radius:6px;background:radial-gradient(120% 90% at 50% 0%,rgba(50,29,88,.95),rgba(8,4,20,.98));box-shadow:inset 0 0 0 1px rgba(18,9,36,.9),0 12px 40px rgba(0,0,0,.55),0 0 34px rgba(150,100,255,.18)}
+.ofr-card::before{content:"";position:absolute;inset:6px;border:1px dashed rgba(174,140,255,.26);border-radius:3px;pointer-events:none}
+.ofr-card-numeral{position:absolute;top:8px;right:14px;margin:0;font-size:34px;letter-spacing:.1em;color:rgba(174,140,255,.38)}
+.ofr-card-tier{margin:0;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#a97fff}
+.ofr-card h3{margin:8px 0 6px;font-size:clamp(19px,4.6vw,28px);font-weight:600;color:#f8f3ff}
+.ofr-card-opening{margin:0;font-size:13px;font-style:italic;color:#c8b0f8}
+.ofr-card-omen{margin:12px 0 0;font-size:15px;line-height:1.6;color:#ede4ff}
+.ofr-card-advice{margin:10px 0 0;font-size:13.5px;color:#cfc0ee}
+.ofr-card-source{margin:14px 0 0;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(190,170,235,.62)}
 .ofr-card-turn{animation:ofr-turn .5s cubic-bezier(.2,.7,.25,1) both}
 .ofr-announce{position:absolute;width:1px;height:1px;margin:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.ofr-reading .ofr-feedback{margin:0;font-size:12px;color:#a9e8c7}
+.ofr-reading .ofr-feedback{margin:0;font-size:12px;color:#bda8ee}
 .ofr-setting{display:flex;gap:8px;align-items:flex-start;margin:8px 0}
+
+/* --- SDK world chrome, restyled to the shrine's palette ---------------------
+   GameWorld draws the interaction prompt itself, and the SDK's palette accent
+   is signal green (#CCFF00). These live in the game's own document, so they are
+   overridden here rather than in host.css. Keep the shapes; change only colour.
+   Declared after world-view.css in index.tsx, so equal specificity wins. */
+.rf-world-prompt{border-color:#a97fff;background:#14082a;color:#efe7ff}
+.rf-world-prompt:enabled{background:#a97fff;border-color:#c9b0ff;color:#120627}
+.rf-world-prompt:disabled{background:#14082a;border-color:#4a3670;color:#9a86c4}
+.rf-world-loading{background:#06040f;color:#e8e0ff}
+.rf-world-loading button{border-color:#a97fff;background:#a97fff;color:#120627}
 
 @keyframes ofr-turn{from{transform:perspective(900px) rotateY(92deg);opacity:0}to{transform:none;opacity:1}}
 @keyframes ofr-drift{0%{transform:translateY(0) scale(.8);opacity:0}20%{opacity:.85}100%{transform:translateY(-150px) scale(1.15);opacity:0}}
@@ -104,14 +117,23 @@
   .ofr-hint-wide{display:none}
   .ofr-hint-narrow{display:inline}
   .ofr-oracle-panel{flex-direction:column;align-items:flex-start}
-  .ofr-reading{padding:10px 10px 64px}
+  /* Clear the runtime's bottom-left toolbar, which overlays the frame's foot. */
+  .ofr-reading{padding:10px 10px 84px}
+  .ofr-stage>.ofr-feedback{bottom:104px}
+  /* Three stacked 44px buttons do not fit a portrait frame with the card above
+     them. Pair them up so the reading fits without scrolling. */
+  .ofr-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .ofr-actions .ofr-primary{grid-column:1 / -1}
+  .ofr-reading .ofr-oracle-panel{padding:10px}
+  .ofr-reading .ofr-offer-copy{font-size:12.5px}
   .ofr-card-numeral{font-size:26px}
   .ofr-odds{font-size:11.5px}
 }
 @media (max-width:400px){
-  .ofr .ofr-reading button{padding:10px;width:100%}
-  .ofr-actions{flex-direction:column}
-  .ofr-card{padding:18px 14px 20px}
+  /* Buttons stay in the grid so the reading still fits without scrolling. */
+  .ofr-actions{gap:6px}
+  .ofr .ofr-reading button{padding:9px 8px;font-size:12px}
+  .ofr-card{padding:16px 14px 18px}
   .ofr-card-omen{font-size:14px}
   .ofr-odds th,.ofr-odds td{padding:5px 4px;font-size:11px}
 }

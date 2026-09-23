@@ -1,0 +1,39 @@
+/* Oracle Fortune Reader — trusted runtime styling (`host.css`).
+   The CLI loads this into the runtime document, NOT the sandboxed game. It is
+   the only place the page *around* the game frame can be styled: without it the
+   runtime's own layout.css leaves a light grey page behind a 960px frame.
+
+   Deliberately keeping the SDK's 3:2 reference aspect ratio (the vibeathon asks
+   for content inside the 960x640 viewport). Only the frame's maximum size and
+   the surrounding page colour change. */
+
+:root{
+  /* Default is 960px. A little more uses the screen without touching the shape. */
+  --rf-game-max-width:1200px;
+}
+
+/* Phones: a 3:2 frame in portrait is only ~a third of the screen, which reads as
+   broken. The SDK documents 3 / 4 as the portrait recipe, so use it on narrow
+   viewports and keep the 3:2 reference everywhere else.
+
+   The width is clamped by the available height: the frame's height is
+   width / 0.75, and the runtime adds its own status bar and bottom toolbar, so
+   without this a tall frame runs off the bottom of a short screen and the last
+   action becomes unreachable. 132px covers that runtime chrome. */
+@media (max-width:700px){
+  :root{
+    --rf-game-max-width:min(100%, calc((100dvh - 132px) * 0.75));
+    --rf-game-aspect-ratio:3 / 4;
+  }
+}
+
+html,body{
+  /* layout.css sets background:#eee — this is what made the page look unfinished. */
+  background:#06040f;
+  color:#e8e0ff;
+}
+
+/* Keep the runtime's own toolbar legible against the dark page. */
+@media (prefers-color-scheme:light){
+  html,body{background:#06040f}
+}

@@ -50,7 +50,7 @@ async function confirm(page) {
 
 test("the shrine opens a full-screen reading whose tier comes from the settled result", { timeout: 120_000 }, async () => {
   const result = await testGame(GAME, {
-    width: 960,
+    width: Number(process.env.OFR_WIDTH ?? 960),
     check: async ({ game, page }) => {
       // The world and the Friend's artwork finish loading, and the shrine prompt is in reach.
       await game.locator(".rf-world-loading").waitFor({ state: "hidden" });
@@ -97,6 +97,9 @@ test("the shrine opens a full-screen reading whose tier comes from the settled r
       const omen = (await game.locator(".ofr-card-omen").textContent()) ?? "";
       const advice = (await game.locator(".ofr-card-advice").textContent()) ?? "";
       assert(omen.length > 20 && advice.length > 20, "The card needs real omen and advice text");
+
+      // Optional visual capture for design review (never written unless asked for).
+      if (process.env.OFR_SCREENSHOT) await page.screenshot({ path: process.env.OFR_SCREENSHOT });
 
       // The simulated purchase is reflected in the HUD balance (20 RF - 1 RF).
       await reading.getByRole("button", { name: /Keep this reading/ }).click();
