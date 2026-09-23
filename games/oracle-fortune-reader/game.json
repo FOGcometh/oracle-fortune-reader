@@ -1,0 +1,12 @@
+{
+  "name": "Oracle Fortune Reader",
+  "consumable": "Fortune Card",
+  "price": "1000000000000000000",
+  "outcomes": [
+    { "name": "Whisper", "chanceBps": 5000, "reward": "250000000000000000" },
+    { "name": "Glimmer", "chanceBps": 2500, "reward": "750000000000000000" },
+    { "name": "Echo", "chanceBps": 1500, "reward": "1000000000000000000" },
+    { "name": "Prophecy", "chanceBps": 700, "reward": "2000000000000000000" },
+    { "name": "Oracle's Eye", "chanceBps": 300, "reward": "10000000000000000000" }
+  ]
+}

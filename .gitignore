@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# SDK build output (generated — never commit)
+.friendsdk/
+
+# SDK package archive (download it from the v0.1.2 release; don't commit a binary)
+rarefriends-friendsdk-*.tgz
+
+# Test artifacts
+artifacts/
+test-results/
+playwright-report/
+
+# Editor / OS noise
+.DS_Store
+*.log
+.vscode/
+.idea/
