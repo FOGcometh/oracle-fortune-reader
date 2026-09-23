@@ -169,6 +169,9 @@ Friend. Connecting, selecting and verifying require no signature and no transact
 - Sound is the SDK's procedural cue kit (`@rarefriends/friendsdk/sounds`). No recorded or
   third-party audio is bundled.
 - The fortune text in `deck.ts` was written for this project.
+- Built by **lucymoran.eth** (GitHub: [FOGcometh](https://github.com/FOGcometh)). The Rare
+  Friends community knows this builder by the `lucymoran.eth` wallet identity, so credit
+  belongs there rather than to the GitHub handle.
 
 ## Known limitations
 

@@ -3,6 +3,9 @@
 Category: **Character Spotlight**. Built with FriendSDK **v0.1.2** for the CLI
 game layout (`index.tsx` + `game.json` + assets).
 
+Builder: **lucymoran.eth** (GitHub: [FOGcometh](https://github.com/FOGcometh)) — the
+Rare Friends community knows this builder by the `lucymoran.eth` wallet identity.
+
 Your own Rare Friends Generations NFT **is the oracle**. A small shrine sits in a
 dark corner of the supplied garden world; walk up to it, interact, and the view
 is taken over by a full-screen tarot-style reading. The oracle's portrait is
