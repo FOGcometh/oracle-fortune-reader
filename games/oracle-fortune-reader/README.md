@@ -92,9 +92,9 @@ instead of re-rolling it.
 | File | Contents |
 | --- | --- |
 | `index.tsx` | The game component: walkable shrine, HUD, full-screen reading, action flow, accessibility |
-| `deck.ts` | The hand-authored deck: 5 tiers, 22 fortunes, the family-flavor map and the deterministic `selectFortune` selector. Pure data + pure functions, no React |
+| `deck.ts` | The hand-authored deck: 5 tiers, 72 fortunes (15/14/15/14/14), the family-flavor map and the deterministic `selectFortune` selector. Pure data + pure functions, no React |
 | `game.json` | The chance-game definition: name, consumable, price and the five tiers |
-| `style.css` | The shrine's palette (near-black ground, deep green glow) and responsive layout |
+| `style.css` | The shrine's palette (near-black ground, deep violet glow) and responsive layout |
 | `test/interaction.test.mjs` | Focused interaction check for the shrine → reading flow, run through the SDK's exported `testGame` helper |
 
 ## Editing the deck

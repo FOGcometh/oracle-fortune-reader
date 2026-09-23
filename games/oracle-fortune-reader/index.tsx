@@ -25,7 +25,7 @@ import "@rarefriends/friendsdk/frame.css";
 import "@rarefriends/friendsdk/world-view.css";
 import "./style.css";
 
-/** The shrine corner of the supplied garden world: darker, quieter, green-lit. */
+/** The shrine corner of the supplied garden world: darker, quieter, violet-lit. */
 const SHRINE: WorldPoint = [196, 146];
 const SPAWN: WorldPoint = [232, 176];
 const REACH = 96;

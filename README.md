@@ -18,7 +18,7 @@ Built with **FriendSDK v0.1.2** (`@rarefriends/friendsdk`).
 A hybrid experience in two beats:
 
 1. **The shrine.** A small walkable garden corner, pushed dark and mystical — near-black
-   ground, deep green light, drifting motes. Your Friend stands at the oracle's circle.
+   ground, deep violet light, drifting motes. Your Friend stands at the oracle's circle.
 2. **The reading.** Stepping up and interacting takes over the viewport: a full-screen
    card reading, the Friend centre stage, a fortune drawn face-down and turned over.
 
